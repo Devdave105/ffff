@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Eescents — Luxury perfumes crafted for those who demand excellence. Shop our exclusive collection of signature scents.">
+  <meta name="keywords" content="luxury perfume, signature scent, Eescents, Nigeria perfume, premium fragrance">
+  <title>Eescents — Luxury Perfume House</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+<body>
+
+<!-- ============================================================
+  CUSTOM CURSOR
+  ============================================================ -->
+<!-- <div class="cursor-dot"></div>
+<div class="cursor-ring"></div> -->
+
+<!-- ============================================================
+  MOBILE NAV OVERLAY
+  ============================================================ -->
+<div class="mobile-nav-overlay" id="mobile-overlay"></div>
+
+<!-- ============================================================
+  MOBILE NAV
+  ============================================================ -->
+<nav class="mobile-nav" id="mobile-nav">
+  <a href="#collection">Collection</a>
+  <a href="#signature">Signature</a>
+  <a href="#how-it-works">How It Works</a>
+  <a href="#about">Our Story</a>
+  <a href="#testimonials">Reviews</a>
+  <a href="#contact">Contact</a>
+  <a href="shop.html" style="color: var(--gold); margin-top:1rem;">Shop All</a>
+</nav>
+
+<!-- ============================================================
+  NAVBAR
+  ============================================================ -->
+<header id="navbar">
+  <div class="nav-logo">
+    <div class="nav-logo-text">E<span>e</span>scents</div>
+    <div class="nav-logo-tagline">The Art of Fine Fragrance</div>
+  </div>
+
+  <nav class="nav-links">
+    <a href="#collection">Collection</a>
+    <a href="#signature">Signature</a>
+    <a href="#how-it-works">How It Works</a>
+    <a href="#about">Our Story</a>
+    <a href="#testimonials">Reviews</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="nav-actions">
+    <a href="shop.html" class="btn btn-outline" style="padding:0.6rem 1.4rem;"><span>Shop All</span></a>
+    <button class="cart-btn" aria-label="Open cart">
+      <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+      <span class="cart-count" id="cart-count-nav">0</span>
+    </button>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============================================================
+  HERO SLIDER
+  ============================================================ -->
+<section id="hero">
+  <div id="hero-track"></div>
+
+  <div class="hero-controls">
+    <div class="hero-dots" id="hero-dots"></div>
+  </div>
+
+  <div class="hero-arrows">
+    <button class="hero-arrow" id="hero-prev" aria-label="Previous slide">
+      <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
+    <button class="hero-arrow" id="hero-next" aria-label="Next slide">
+      <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+  </div>
+
+  <div class="scroll-indicator">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ============================================================
+  TICKER 1 — PERFUME BRANDS / SCENTS
+  ============================================================ -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <!-- Doubled for seamless loop -->
+    <span class="ticker-item">Oud Collection</span><span class="ticker-sep">+</span>
+    <span class="ticker-item">Rose de Minuit</span><span class="ticker-sep">+</span>
+    <span class="ticker-item">Black Saffron</span><span class="ticker-sep">+</span>
+    <span class="ticker-item">Amber Elixir</span><span class="ticker-sep">+</span>
+    <span class="ticker-item">Velvet Musk</span><span class="ticker-sep">+</span>
+    <span class="ticker-item">Midnight Orchid</span><span class="ticker-sep">+</span>
+    <span class="ticker-item">Cedar & Smoke</span><span class="ticker-sep">+</span>
+    <span class="ticker-item">Imperial Iris</span><span class="ticker-sep">+</span>
+    <span class="ticker-item">Sandalwood Royale</span><span class="ticker-sep">+</span>
+    <span class="ticker-item">Gold Bergamot</span><span class="ticker-sep">+</span>
+    <!-- Repeat -->
+    <span class="ticker-item">Oud Collection</span><span class="ticker-sep">+</span>
+    <span class="ticker-item">Rose de Minuit</span><span class="ticker-sep">+</span>
+    <span class="ticker-item">Black Saffron</span><span class="ticker-sep">+</span>
+    <span class="ticker-item">Amber Elixir</span><span class="ticker-sep">+</span>
+    <span class="ticker-item">Velvet Musk</span><span class="ticker-sep">+</span>
+    <span class="ticker-item">Midnight Orchid</span><span class="ticker-sep">+</span>
+    <span class="ticker-item">Cedar & Smoke</span><span class="ticker-sep">+</span>
+    <span class="ticker-item">Imperial Iris</span><span class="ticker-sep">+</span>
+    <span class="ticker-item">Sandalwood Royale</span><span class="ticker-sep">+</span>
+    <span class="ticker-item">Gold Bergamot</span><span class="ticker-sep">+</span>
+  </div>
+</div>
+
+<!-- ============================================================
+  TICKER 2 — FREE DELIVERY (GOLD)
+  ============================================================ -->
+<div class="ticker-wrap gold-ticker">
+  <div class="ticker-track ticker-track-fast">
+    <span class="ticker-item">Orders from 50,000 — Free Delivery Nationwide</span><span class="ticker-sep">|</span>
+    <span class="ticker-item">Premium Gift Packaging on Every Order</span><span class="ticker-sep">|</span>
+    <span class="ticker-item">100% Authentic Luxury Fragrances</span><span class="ticker-sep">|</span>
+    <span class="ticker-item">Orders from 50,000 — Free Delivery Nationwide</span><span class="ticker-sep">|</span>
+    <span class="ticker-item">Premium Gift Packaging on Every Order</span><span class="ticker-sep">|</span>
+    <span class="ticker-item">100% Authentic Luxury Fragrances</span><span class="ticker-sep">|</span>
+    <span class="ticker-item">Orders from 50,000 — Free Delivery Nationwide</span><span class="ticker-sep">|</span>
+    <span class="ticker-item">Premium Gift Packaging on Every Order</span><span class="ticker-sep">|</span>
+    <span class="ticker-item">100% Authentic Luxury Fragrances</span><span class="ticker-sep">|</span>
+  </div>
+</div>
+
+<!-- ============================================================
+  BRAND STATEMENT
+  ============================================================ -->
+<section id="brand-statement">
+  <p class="brand-manifesto reveal">
+    "We believe fragrance is the most intimate form of luxury —<br>
+    <strong>invisible to the eye, unforgettable to the soul.</strong><br>
+    Eescents exists for those who refuse to be ordinary."
+  </p>
+  <div class="section-cta reveal delay-1">
+    <a href="#collection" class="btn btn-outline btn-arrow"><span>Discover the Collection</span></a>
+  </div>
+</section>
+
+<!-- ============================================================
+  FEATURED COLLECTION
+  ============================================================ -->
+<section id="collection">
+  <div class="section-header reveal">
+    <span class="label-text">Our Collection</span>
+    <div class="gold-line" style="margin-top:1rem;"></div>
+    <h2 class="display-lg">Fragrances That<br><em style="font-style:italic;color:var(--gold);">Define You</em></h2>
+    <p class="body-text" style="margin-top:1rem; max-width:500px;">Each scent in the Eescents collection is a masterwork — crafted from the finest ingredients, bottled in elegance, and designed to last.</p>
+  </div>
+
+  <div class="collection-grid">
+
+    <!-- Product 1 -->
+    <div class="product-card reveal delay-1">
+      <div class="product-badge">Bestseller</div>
+      <div class="product-img-wrap">
+        <img src="https://images.unsplash.com/photo-1608528577891-eb055944f2e7?w=600&q=80" alt="Noir Absolu Perfume">
+        <div class="product-hover-overlay">
+          <p class="product-scent-notes">Top: Black Pepper, Cardamom<br>Heart: Dark Rose, Oud<br>Base: Amber, Sandalwood</p>
+        </div>
+      </div>
+      <div class="product-info">
+        <h3 class="product-name">Noir Absolu</h3>
+        <p class="product-size">Eau de Parfum — 100ml</p>
+        <p class="product-desc">A commanding presence of dark oud and black rose. Reserved for those who wear confidence as naturally as they breathe.</p>
+        <div class="product-price-row">
+          <span class="product-price">₦38,500</span>
+          <span class="product-price-old">₦52,000</span>
+        </div>
+        <button class="add-to-cart" onclick="addToCart('noir-absolu', 'Noir Absolu', 38500, 'https://images.unsplash.com/photo-1608528577891-eb055944f2e7?w=200&q=80', '100ml')">
+          <span>Add to Cart</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="product-card reveal delay-2">
+      <div class="product-badge badge-new">New</div>
+      <div class="product-img-wrap">
+        <img src="https://images.unsplash.com/photo-1541643600914-78b084683702?w=600&q=80" alt="Rose Imperiale Perfume">
+        <div class="product-hover-overlay">
+          <p class="product-scent-notes">Top: Bergamot, Lychee<br>Heart: Bulgarian Rose, Peony<br>Base: Musk, Patchouli</p>
+        </div>
+      </div>
+      <div class="product-info">
+        <h3 class="product-name">Rose Imperiale</h3>
+        <p class="product-size">Eau de Parfum — 100ml</p>
+        <p class="product-desc">The finest Bulgarian rose hearts meet a velvety musky base. Feminine power distilled into a single masterpiece.</p>
+        <div class="product-price-row">
+          <span class="product-price">₦42,000</span>
+          <span class="product-price-old">₦58,000</span>
+        </div>
+        <button class="add-to-cart" onclick="addToCart('rose-imperiale', 'Rose Imperiale', 42000, 'https://images.unsplash.com/photo-1541643600914-78b084683702?w=200&q=80', '100ml')">
+          <span>Add to Cart</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="product-card reveal delay-3">
+      <div class="product-img-wrap">
+        <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=600&q=80" alt="Saffron & Gold Perfume">
+        <div class="product-hover-overlay">
+          <p class="product-scent-notes">Top: Saffron, Cinnamon<br>Heart: Gold Accord, Rose<br>Base: Leather, Oud</p>
+        </div>
+      </div>
+      <div class="product-info">
+        <h3 class="product-name">Saffron & Gold</h3>
+        <p class="product-size">Eau de Parfum — 75ml</p>
+        <p class="product-desc">Arabian saffron meets warm gold accord in this bold, opulent unisex fragrance that demands to be noticed.</p>
+        <div class="product-price-row">
+          <span class="product-price">₦35,000</span>
+          <span class="product-price-old">₦48,000</span>
+        </div>
+        <button class="add-to-cart" onclick="addToCart('saffron-gold', 'Saffron and Gold', 35000, 'https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=200&q=80', '75ml')">
+          <span>Add to Cart</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Product 4 -->
+    <div class="product-card reveal delay-4">
+      <div class="product-badge">Limited</div>
+      <div class="product-img-wrap">
+        <img src="https://images.unsplash.com/photo-1617897903246-719242758050?w=600&q=80" alt="Velvet Oud Perfume">
+        <div class="product-hover-overlay">
+          <p class="product-scent-notes">Top: Violet, Plum<br>Heart: Oud, Dark Rose<br>Base: Vanilla, Vetiver</p>
+        </div>
+      </div>
+      <div class="product-info">
+        <h3 class="product-name">Velvet Oud</h3>
+        <p class="product-size">Extrait de Parfum — 50ml</p>
+        <p class="product-desc">A rare concentration of pure oud wrapped in velvety violet and plum. 12-hour longevity on the skin.</p>
+        <div class="product-price-row">
+          <span class="product-price">₦55,000</span>
+          <span class="product-price-old">₦75,000</span>
+        </div>
+        <button class="add-to-cart" onclick="addToCart('velvet-oud', 'Velvet Oud', 55000, 'https://images.unsplash.com/photo-1617897903246-719242758050?w=200&q=80', '50ml')">
+          <span>Add to Cart</span>
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section-cta reveal">
+    <a href="shop.html" class="btn btn-gold btn-arrow"><span>View All Fragrances</span></a>
+  </div>
+</section>
+
+<!-- ============================================================
+  SIGNATURE SECTION
+  ============================================================ -->
+<section id="signature">
+  <div class="signature-inner">
+    <div class="signature-img-wrap reveal-left">
+      <img src="https://images.unsplash.com/photo-1590156206657-aec9b6258aef?w=800&q=80" alt="Eescents Signature Fragrance">
+      <div class="signature-img-frame"></div>
+    </div>
+    <div class="signature-content reveal-right">
+      <span class="label-text">The Signature Piece</span>
+      <div class="gold-line" style="margin-top:1rem;"></div>
+      <h2 class="display-lg">L'Or Noir<br><em style="font-style:italic;">Extrait</em></h2>
+      <blockquote class="signature-quote">
+        "There are scents you wear, and then there is L'Or Noir — a scent that wears you. This is our most extraordinary creation."
+      </blockquote>
+      <p class="body-text">
+        L'Or Noir Extrait is the crown jewel of the Eescents House. Blended over 72 hours by hand using aged oud from the forests of Assam, rare black rose absolute from Turkey, and pure gold accord — this is not merely a perfume. It is a statement of who you are.
+      </p>
+      <p class="body-text" style="margin-top:1rem;">
+        Longevity: 24 hours. Sillage: Commanding. Available in a hand-blown crystal bottle with 24K gold plating.
+      </p>
+      <div class="signature-price-block">
+        <div class="sig-price">₦85,000</div>
+        <div class="sig-price-old">Was ₦120,000</div>
+      </div>
+      <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+        <button class="btn btn-gold btn-arrow" onclick="addToCart('lor-noir', 'L\'Or Noir Extrait', 85000, 'https://images.unsplash.com/photo-1590156206657-aec9b6258aef?w=200&q=80', '50ml')"><span>Add to Cart</span></button>
+        <a href="shop.html" class="btn btn-outline"><span>View Full Collection</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+  HOW IT WORKS
+  ============================================================ -->
+<section id="how-it-works">
+  <div class="section-header section-header-center reveal">
+    <span class="label-text">The Eescents Experience</span>
+    <div class="gold-line-center" style="margin-top:1rem;"></div>
+    <h2 class="display-lg">From Our House<br><em style="font-style:italic;color:var(--gold);">To Your Skin</em></h2>
+    <p class="body-text" style="margin-top:1rem; max-width:500px; margin-left:auto; margin-right:auto;">Every Eescents order is an experience from start to finish — we handle every detail so you receive only the extraordinary.</p>
+  </div>
+
+  <img class="how-it-works-img reveal"
+    src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?w=1200&q=80"
+    alt="Luxury perfume creation process">
+
+  <div class="steps-grid">
+    <div class="step-item reveal delay-1">
+      <div class="step-num">01</div>
+      <div class="step-icon">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </div>
+      <h3 class="step-title">Curate Your Scent</h3>
+      <p class="step-desc">Browse our carefully curated collection of luxury fragrances. Each scent comes with a full scent profile, longevity rating, and mood description to help you find your perfect match.</p>
+    </div>
+    <div class="step-item reveal delay-2">
+      <div class="step-num">02</div>
+      <div class="step-icon">
+        <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+      </div>
+      <h3 class="step-title">Place Your Order</h3>
+      <p class="step-desc">Add your selections to cart, complete your details, and confirm your payment to our verified account. Orders above 50,000 receive completely free nationwide delivery.</p>
+    </div>
+    <div class="step-item reveal delay-3">
+      <div class="step-num">03</div>
+      <div class="step-icon">
+        <svg viewBox="0 0 24 24"><path d="M20 12V6H4v6"/><path d="M12 12v9"/><rect x="2" y="6" width="20" height="6" rx="2"/><path d="M6 12v9h12v-9"/></svg>
+      </div>
+      <h3 class="step-title">Delivered in Luxury</h3>
+      <p class="step-desc">Your fragrance arrives in our signature black and gold packaging — perfect as a gift or a personal indulgence. We personally confirm every delivery within 24 hours of dispatch.</p>
+    </div>
+  </div>
+
+  <div class="section-cta reveal">
+    <a href="shop.html" class="btn btn-gold btn-arrow"><span>Start Shopping</span></a>
+  </div>
+</section>
+
+<!-- ============================================================
+  TESTIMONIALS
+  ============================================================ -->
+<section id="testimonials">
+  <div class="section-header section-header-center reveal">
+    <span class="label-text">Client Reviews</span>
+    <div class="gold-line-center" style="margin-top:1rem;"></div>
+    <h2 class="display-lg">What Our Clients<br><em style="font-style:italic;color:var(--gold);">Are Saying</em></h2>
+    <p class="body-text" style="margin-top:1rem; max-width:480px; margin-left:auto; margin-right:auto;">Real reviews from real people who chose to wear something extraordinary.</p>
+  </div>
+
+  <div class="testimonials-grid">
+
+    <!-- Review 1 -->
+    <div class="testimonial-card reveal delay-1">
+      <div class="google-badge">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+        </svg>
+        <span>Google Review</span>
+        <span style="margin-left:auto; font-size:0.65rem; color:var(--gold-dim);">Verified Purchase</span>
+      </div>
+      <div class="stars">
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <p class="review-text">"I ordered the Noir Absolu and I have not stopped receiving compliments since. People stop me at work, at church, everywhere. The packaging alone made me feel like royalty. Eescents is not just a perfume brand — it is an entire experience. I will be a customer for life."</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar">
+          <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&q=80" alt="Chidinma Okonkwo">
+        </div>
+        <div class="reviewer-info">
+          <div class="reviewer-name">Chidinma Okonkwo</div>
+          <div class="reviewer-location">Lagos, Nigeria</div>
+          <div class="reviewer-date">March 2025</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Review 2 -->
+    <div class="testimonial-card reveal delay-2">
+      <div class="google-badge">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+        </svg>
+        <span>Google Review</span>
+        <span style="margin-left:auto; font-size:0.65rem; color:var(--gold-dim);">Verified Purchase</span>
+      </div>
+      <div class="stars">
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <p class="review-text">"Bought the Velvet Oud as a birthday gift for my wife. She cried when she opened it — not because she was sad, but because it was that beautiful. The scent lasted the entire day into the night. We both ordered more before the weekend was over. Eescents has earned our complete loyalty."</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80" alt="Emmanuel Adeyemi">
+        </div>
+        <div class="reviewer-info">
+          <div class="reviewer-name">Emmanuel Adeyemi</div>
+          <div class="reviewer-location">Abuja, Nigeria</div>
+          <div class="reviewer-date">February 2025</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Review 3 -->
+    <div class="testimonial-card reveal delay-3">
+      <div class="google-badge">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+        </svg>
+        <span>Google Review</span>
+        <span style="margin-left:auto; font-size:0.65rem; color:var(--gold-dim);">Verified Purchase</span>
+      </div>
+      <div class="stars">
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <p class="review-text">"I have tried so many perfume brands but Saffron and Gold is in a class of its own. The delivery was fast, the packaging was immaculate, and the fragrance projection is insane. My colleagues asked me which brand it was all week. I have already placed my second order. Highly recommended to everyone."</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar">
+          <img src="https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?w=100&q=80" alt="Blessing Nwosu">
+        </div>
+        <div class="reviewer-info">
+          <div class="reviewer-name">Blessing Nwosu</div>
+          <div class="reviewer-location">Port Harcourt, Nigeria</div>
+          <div class="reviewer-date">January 2025</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Comment / Leave a Review Form -->
+  <div class="comment-form-wrap reveal">
+    <h3 class="comment-form-title">Leave Your Review</h3>
+    <form id="review-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Your Full Name *</label>
+          <input type="text" id="review-name" placeholder="e.g. Amaka Johnson" required>
+        </div>
+        <div class="form-group">
+          <label>Your Location *</label>
+          <input type="text" id="review-location" placeholder="e.g. Lagos, Nigeria" required>
+        </div>
+      </div>
+      <div class="form-group" style="margin-bottom:1rem;">
+        <label>Your Rating *</label>
+        <div class="star-rating">
+          <input type="radio" id="star5" name="rating" value="5"><label for="star5">&#9733;</label>
+          <input type="radio" id="star4" name="rating" value="4"><label for="star4">&#9733;</label>
+          <input type="radio" id="star3" name="rating" value="3"><label for="star3">&#9733;</label>
+          <input type="radio" id="star2" name="rating" value="2"><label for="star2">&#9733;</label>
+          <input type="radio" id="star1" name="rating" value="1"><label for="star1">&#9733;</label>
+        </div>
+      </div>
+      <div class="form-group" style="margin-bottom:1.5rem;">
+        <label>Your Review *</label>
+        <textarea id="review-text" placeholder="Tell others about your Eescents experience..." required></textarea>
+      </div>
+      <button type="submit" class="btn btn-gold"><span>Submit Review</span></button>
+    </form>
+  </div>
+
+  <div class="section-cta reveal">
+    <a href="shop.html" class="btn btn-outline btn-arrow"><span>Shop the Collection They Love</span></a>
+  </div>
+</section>
+
+<!-- ============================================================
+  ABOUT / FOUNDER
+  ============================================================ -->
+<section id="about">
+  <div class="about-inner">
+    <div class="about-img-wrap reveal-left">
+      <img class="about-img" src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=700&q=80" alt="Eescents Brand Story">
+      <div class="about-img-badge">
+        <strong>5+</strong> Years of<br>Fragrance Mastery
+      </div>
+    </div>
+    <div class="reveal-right">
+      <span class="label-text">Our Story</span>
+      <div class="gold-line" style="margin-top:1rem;"></div>
+      <h2 class="display-lg">Born From a<br><em style="font-style:italic;color:var(--gold);">Passion for</em><br>Perfection</h2>
+      <p class="body-text" style="margin-top:1.5rem;">
+        Eescents was founded on a single belief — that luxury fragrance should not be a privilege reserved for the few. Our founder spent years traveling through the heart of the Middle East, France, and Southeast Asia, learning the ancient art of perfumery from master perfumers.
+      </p>
+      <p class="body-text" style="margin-top:1rem;">
+        What began as a passion became a house. Every Eescents fragrance is blended by hand, bottled with care, and shipped with intention. We source only the finest raw ingredients — aged oud, rose absolute, rare musk, saffron — and transform them into wearable art.
+      </p>
+      <p class="body-text" style="margin-top:1rem;">
+        Today, Eescents serves thousands of discerning clients across Nigeria and beyond. We do not mass-produce. We craft. And we will never compromise on quality for the sake of quantity.
+      </p>
+      <div class="trust-badges" style="margin-top:2rem;">
+        <div class="trust-badge">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span>100% Authentic Ingredients</span>
+        </div>
+        <div class="trust-badge">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          <span>24hr Order Confirmation</span>
+        </div>
+        <div class="trust-badge">
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <span>Nationwide Delivery</span>
+        </div>
+        <div class="trust-badge">
+          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <span>Loved by 5,000+ Clients</span>
+        </div>
+      </div>
+      <div style="margin-top:2.5rem; display:flex; gap:1rem; flex-wrap:wrap;">
+        <a href="#collection" class="btn btn-gold btn-arrow"><span>Explore Our Fragrances</span></a>
+        <a href="#contact" class="btn btn-ghost"><span>Get in Touch</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+  NEWSLETTER
+  ============================================================ -->
+<section id="newsletter">
+  <img class="newsletter-img" src="https://images.unsplash.com/photo-1547887538-e3a2f32cb1cc?w=1400&q=80" alt="Eescents Newsletter">
+  <div class="reveal">
+    <span class="label-text">Stay in the World of Eescents</span>
+    <div class="gold-line-center" style="margin-top:1rem;"></div>
+    <h2 class="display-md" style="margin-bottom:0.8rem;">Enter the World of<br><em style="font-style:italic;color:var(--gold);">Extraordinary Scent</em></h2>
+    <p class="body-text" style="max-width:460px; margin:0 auto 0.5rem;">Subscribe for exclusive access to new launches, member-only offers, and fragrance stories you will not find anywhere else.</p>
+    <form id="newsletter-form" class="newsletter-form">
+      <input type="email" placeholder="Your email address" required>
+      <button type="submit">Subscribe</button>
+    </form>
+    <p style="font-size:0.72rem; color:var(--white-dim); opacity:0.6;">No spam. Only the finest. Unsubscribe anytime.</p>
+  </div>
+  <div class="section-cta reveal" style="margin-top:2rem;">
+    <a href="shop.html" class="btn btn-outline btn-arrow"><span>Shop the Collection Now</span></a>
+  </div>
+</section>
+
+<!-- ============================================================
+  CONTACT
+  ============================================================ -->
+<section id="contact">
+  <div class="section-header reveal">
+    <span class="label-text">Get In Touch</span>
+    <div class="gold-line" style="margin-top:1rem;"></div>
+    <h2 class="display-lg">We Are Here<br><em style="font-style:italic;color:var(--gold);">For You</em></h2>
+  </div>
+  <div class="contact-inner">
+    <div class="reveal-left">
+      <p class="body-text" style="margin-bottom:2.5rem;">Have a question about a fragrance? Need help selecting a gift? Want to place a bulk or corporate order? We are available and ready to assist you personally.</p>
+
+      <div class="contact-info-item">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        </div>
+        <div>
+          <div class="label-text" style="margin-bottom:0.3rem;">Phone</div>
+          <a href="tel:09031538922" style="color:var(--white); font-size:1.1rem; font-family:var(--font-display);">09031538922</a>
+          <p class="body-text-sm" style="margin-top:0.2rem;">Available Mon – Sat, 9am – 8pm</p>
+        </div>
+      </div>
+
+      <div class="contact-info-item">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div>
+          <div class="label-text" style="margin-bottom:0.3rem;">Email</div>
+          <a href="mailto:ekeninietuk234@gmail.com" style="color:var(--white); font-size:1rem; font-family:var(--font-display); word-break:break-all;">ekeninietuk234@gmail.com</a>
+          <p class="body-text-sm" style="margin-top:0.2rem;">We respond within 2 hours</p>
+        </div>
+      </div>
+
+      <div class="contact-info-item">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+        </div>
+        <div>
+          <div class="label-text" style="margin-bottom:0.3rem;">WhatsApp</div>
+          <a href="https://wa.me/2349031538922" target="_blank" style="color:var(--gold); font-size:1rem; font-family:var(--font-display);">Chat with Us on WhatsApp</a>
+          <p class="body-text-sm" style="margin-top:0.2rem;">Fastest response guaranteed</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal-right">
+      <div style="background:var(--black-light); border:1px solid var(--border); padding:2.5rem;">
+        <h3 class="display-sm" style="margin-bottom:1.5rem;">Send a Message</h3>
+        <div class="form-group" style="margin-bottom:1rem;">
+          <label>Full Name</label>
+          <input type="text" placeholder="Your full name">
+        </div>
+        <div class="form-group" style="margin-bottom:1rem;">
+          <label>Email Address</label>
+          <input type="email" placeholder="Your email">
+        </div>
+        <div class="form-group" style="margin-bottom:1rem;">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="Your phone number">
+        </div>
+        <div class="form-group" style="margin-bottom:1.5rem;">
+          <label>Message</label>
+          <textarea placeholder="How can we help you?" style="min-height:130px;"></textarea>
+        </div>
+        <button class="btn btn-gold btn-arrow" style="width:100%; justify-content:center;" onclick="showToast('Message sent! We will respond within 2 hours.')"><span>Send Message</span></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+  FOOTER
+  ============================================================ -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-col">
+      <div class="nav-logo" style="margin-bottom:1rem;">
+        <div class="nav-logo-text">E<span>e</span>scents</div>
+        <div class="nav-logo-tagline">The Art of Fine Fragrance</div>
+      </div>
+      <p>We create luxury perfumes that speak before you do. Each bottle is a masterwork. Each scent is an experience you will never forget.</p>
+      <div class="footer-social">
+        <a href="#" class="social-icon" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://wa.me/2349031538922" class="social-icon" aria-label="WhatsApp" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+        </a>
+        <a href="mailto:ekeninietuk234@gmail.com" class="social-icon" aria-label="Email">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <div class="footer-col-title">Shop</div>
+      <a href="shop.html">All Fragrances</a>
+      <a href="shop.html">New Arrivals</a>
+      <a href="shop.html">Bestsellers</a>
+      <a href="shop.html">Gift Sets</a>
+      <a href="shop.html">Limited Editions</a>
+    </div>
+
+    <div class="footer-col">
+      <div class="footer-col-title">Information</div>
+      <a href="#about">Our Story</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#contact">Contact Us</a>
+      <a href="#newsletter">Newsletter</a>
+    </div>
+
+    <div class="footer-col">
+      <div class="footer-col-title">Customer Care</div>
+      <a href="tel:09031538922">09031538922</a>
+      <a href="mailto:ekeninietuk234@gmail.com">ekeninietuk234@gmail.com</a>
+      <a href="https://wa.me/2349031538922" target="_blank">WhatsApp Support</a>
+      <p style="margin-top:1rem; font-size:0.78rem; color:var(--gold-dim);">Orders above 50,000<br>receive FREE delivery</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span class="footer-logo-text">E<span>e</span>scents</span>
+    <span>© 2025 Eescents. All rights reserved. The Art of Fine Fragrance.</span>
+    <a href="shop.html" class="btn btn-outline" style="padding:0.5rem 1.2rem;"><span>Shop Now</span></a>
+  </div>
+</footer>
+
+<!-- ============================================================
+  CART DRAWER
+  ============================================================ -->
+<div class="cart-overlay" id="cart-overlay"></div>
+<div class="cart-drawer" id="cart-drawer">
+  <div class="cart-header">
+    <h2 class="cart-title">Your Cart</h2>
+    <button class="cart-close" id="cart-close" aria-label="Close cart">
+      <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="cart-items" id="cart-items">
+    <div class="cart-empty" id="cart-empty">
+      Your cart is empty.<br>
+      <a href="#collection" style="color:var(--gold); font-size:0.85rem; margin-top:0.5rem; display:inline-block;">Explore the Collection</a>
+    </div>
+  </div>
+  <div class="cart-footer" id="cart-footer" style="display:none;">
+    <div class="cart-subtotal">
+      <span>Subtotal</span>
+      <span id="cart-subtotal-val">₦0</span>
+    </div>
+    <div class="cart-total">
+      <span class="cart-total-label">Total</span>
+      <span class="cart-total-val" id="cart-total-val">₦0</span>
+    </div>
+    <div class="free-delivery-note" id="free-delivery-note" style="display:none;">
+      Free delivery applied on this order
+    </div>
+    <button class="cart-checkout-btn" id="cart-checkout-btn">Proceed to Checkout</button>
+  </div>
+</div>
+
+<!-- ============================================================
+  CHECKOUT MODAL
+  ============================================================ -->
+<div class="modal-overlay" id="checkout-modal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h2 class="modal-title">Complete Your Order</h2>
+      <button class="modal-close" id="modal-close" aria-label="Close">
+        <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+
+      <div class="modal-section-title">Order Summary</div>
+      <div class="modal-order-list" id="modal-order-list"></div>
+
+      <div class="modal-section-title" style="margin-top:1.5rem;">Your Details</div>
+      <div class="form-group" style="margin-bottom:1rem;">
+        <label>Full Name *</label>
+        <input type="text" id="checkout-name" placeholder="Your full name">
+      </div>
+      <div class="form-group" style="margin-bottom:1rem;">
+        <label>Phone Number *</label>
+        <input type="tel" id="checkout-phone" placeholder="e.g. 08012345678">
+      </div>
+      <div class="form-group" style="margin-bottom:1rem;">
+        <label>State / Location *</label>
+        <input type="text" id="checkout-location" placeholder="e.g. Lagos, Abuja, Port Harcourt">
+      </div>
+      <div class="form-group" style="margin-bottom:1.5rem;">
+        <label>Delivery Address *</label>
+        <textarea id="checkout-address" placeholder="Your full delivery address" style="min-height:80px;"></textarea>
+      </div>
+
+      <div class="modal-section-title">Payment Information</div>
+      <div class="payment-box">
+        <div class="payment-box-title">Transfer Payment To</div>
+        <div class="payment-detail">Bank: <strong>Moniepoint</strong></div>
+        <div class="payment-detail">Account Number: <strong>9031538922</strong></div>
+        <div class="payment-detail">Account Name: <strong>David Isaac Akpan</strong></div>
+        <p class="payment-note">After transfer, click the button below to submit your order via WhatsApp. We will contact you immediately to confirm your payment and dispatch your order.</p>
+      </div>
+
+      <button class="whatsapp-btn" id="submit-order-btn">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        I Have Paid — Submit Order via WhatsApp
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+  BACK TO TOP
+  ============================================================ -->
+<button id="back-to-top" aria-label="Back to top">
+  <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<script src="main.js"></script>
+</body>
+</html>

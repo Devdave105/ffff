@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Shop Eescents — Browse our full collection of luxury perfumes. Filter by gender, collection, and price. Free delivery on orders above 50,000.">
+  <title>Shop — Eescents Luxury Perfume House</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="shop.css">
+</head>
+<body>
+
+<!-- ============================================================
+  TOP NAVIGATION
+  ============================================================ -->
+<header class="shop-top-nav">
+  <a href="index.html" class="nav-logo" style="text-decoration:none;">
+    <div class="nav-logo-text">E<span>e</span>scents</div>
+    <div class="nav-logo-tagline">The Art of Fine Fragrance</div>
+  </a>
+
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="index.html#collection">Collection</a>
+    <a href="index.html#about">Our Story</a>
+    <a href="index.html#testimonials">Reviews</a>
+    <a href="index.html#contact">Contact</a>
+    <a href="shop.html" style="color:var(--gold);">Shop</a>
+  </nav>
+
+  <div class="nav-actions">
+    <a href="index.html" class="btn btn-ghost" style="padding:0.55rem 1.2rem;">
+      <span style="display:flex;align-items:center;gap:6px;">
+        <svg style="width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+        Back to Home
+      </span>
+    </a>
+    <button class="cart-btn" aria-label="Open cart">
+      <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+      <span class="cart-count" id="cart-count-nav">0</span>
+    </button>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav-overlay" id="mobile-overlay"></div>
+<nav class="mobile-nav" id="mobile-nav">
+  <a href="index.html">Home</a>
+  <a href="index.html#collection">Collection</a>
+  <a href="index.html#about">Our Story</a>
+  <a href="index.html#testimonials">Reviews</a>
+  <a href="index.html#contact">Contact</a>
+  <a href="index.html#newsletter">Newsletter</a>
+</nav>
+
+<!-- ============================================================
+  SHOP HERO
+  ============================================================ -->
+<div class="shop-hero">
+  <div class="shop-hero-img"></div>
+  <div class="shop-hero-overlay"></div>
+  <div class="shop-hero-content">
+    <span class="label-text">The Full Collection</span>
+    <h1 class="shop-hero-title">Every Scent,<br><em>Every Story</em></h1>
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>/</span>
+      <span>Shop All Fragrances</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+  PROMO STRIP
+  ============================================================ -->
+<div class="promo-strip reveal">
+  <div class="promo-strip-item">
+    <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    <div>
+      <strong>Free Delivery</strong>
+      <span>On all orders above 50,000</span>
+    </div>
+  </div>
+  <div class="promo-strip-item">
+    <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    <div>
+      <strong>100% Authentic</strong>
+      <span>Every fragrance is genuine</span>
+    </div>
+  </div>
+  <div class="promo-strip-item">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+    <div>
+      <strong>24hr Confirmation</strong>
+      <span>We confirm every order personally</span>
+    </div>
+  </div>
+  <div class="promo-strip-item">
+    <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+    <div>
+      <strong>WhatsApp Support</strong>
+      <span>09031538922 — always available</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+  COLLECTION TABS
+  ============================================================ -->
+<div style="padding:0 5%; background:var(--black-mid); border-bottom:1px solid var(--border);">
+  <div class="collection-tabs">
+    <button class="collection-tab active" data-col="all" onclick="setCollection('all')">All Fragrances</button>
+    <button class="collection-tab" data-col="signature" onclick="setCollection('signature')">Signature</button>
+    <button class="collection-tab" data-col="new" onclick="setCollection('new')">New Arrivals</button>
+    <button class="collection-tab" data-col="bestsellers" onclick="setCollection('bestsellers')">Bestsellers</button>
+    <button class="collection-tab" data-col="limited" onclick="setCollection('limited')">Limited Edition</button>
+  </div>
+</div>
+
+<!-- ============================================================
+  SHOP LAYOUT: SIDEBAR + MAIN
+  ============================================================ -->
+<div class="shop-layout">
+
+  <!-- SIDEBAR FILTERS (Desktop) -->
+  <aside class="shop-sidebar">
+
+    <div class="filter-section">
+      <div class="filter-title">
+        By Gender
+        <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="filter-tags">
+        <button class="filter-tag active" data-cat="all" onclick="setCategory('all')">All</button>
+        <button class="filter-tag" data-cat="For Him" onclick="setCategory('For Him')">For Him</button>
+        <button class="filter-tag" data-cat="For Her" onclick="setCategory('For Her')">For Her</button>
+        <button class="filter-tag" data-cat="Unisex" onclick="setCategory('Unisex')">Unisex</button>
+      </div>
+    </div>
+
+    <div class="filter-section">
+      <div class="filter-title">
+        Price Range
+        <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="price-range">
+        <input type="range" id="price-range" min="0" max="120000" value="120000" step="1000">
+        <div class="price-labels">
+          <span>₦0</span>
+          <span id="price-max-label">₦120,000</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="filter-section">
+      <div class="filter-title">
+        Availability
+        <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="filter-list">
+        <label class="filter-check">
+          <input type="checkbox" id="filter-instock">
+          In Stock Only
+          <span class="count">11</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="filter-section">
+      <div class="filter-title">Scent Profile</div>
+      <div class="filter-tags">
+        <span class="filter-tag">Woody</span>
+        <span class="filter-tag">Floral</span>
+        <span class="filter-tag">Oriental</span>
+        <span class="filter-tag">Fresh</span>
+        <span class="filter-tag">Musky</span>
+        <span class="filter-tag">Citrus</span>
+      </div>
+    </div>
+
+    <div class="filter-section" style="border-bottom:none;">
+      <div class="filter-title">Longevity</div>
+      <div class="filter-list">
+        <label class="filter-check"><input type="checkbox">24+ Hours</label>
+        <label class="filter-check"><input type="checkbox">12+ Hours</label>
+        <label class="filter-check"><input type="checkbox">8-12 Hours</label>
+        <label class="filter-check"><input type="checkbox">4-8 Hours</label>
+      </div>
+    </div>
+
+    <button class="clear-filters" onclick="resetFilters()">Clear All Filters</button>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="shop-main">
+
+    <!-- Toolbar -->
+    <div class="shop-toolbar">
+      <div style="display:flex;align-items:center;gap:1rem;">
+        <button class="filter-toggle-btn" id="filter-toggle-btn">
+          <svg viewBox="0 0 24 24"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
+          Filters
+        </button>
+        <span class="results-count" id="results-count">Showing <strong>12</strong> fragrances</span>
+      </div>
+      <div class="toolbar-right">
+        <select class="sort-select" id="sort-select">
+          <option value="featured">Featured</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="rating">Top Rated</option>
+          <option value="newest">Newest First</option>
+        </select>
+        <div class="view-toggle">
+          <button class="view-btn active" data-view="grid" onclick="setViewMode('grid')" title="Grid view">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+          </button>
+          <button class="view-btn" data-view="two" onclick="setViewMode('two')" title="Two column">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="18"/><rect x="13" y="3" width="8" height="18"/></svg>
+          </button>
+          <button class="view-btn" data-view="list" onclick="setViewMode('list')" title="List view">
+            <svg viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="shop-grid" id="shop-grid">
+      <!-- Rendered by JS -->
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination">
+      <button class="page-btn arrow">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button class="page-btn active">1</button>
+      <button class="page-btn">2</button>
+      <button class="page-btn">3</button>
+      <span style="color:var(--white-dim);padding:0 0.5rem;">...</span>
+      <button class="page-btn">8</button>
+      <button class="page-btn arrow">
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+
+    <!-- Shop CTA Banner -->
+    <div style="margin-top:4rem; background:var(--black-mid); border:1px solid var(--border); padding:3rem; text-align:center;" class="reveal">
+      <span class="label-text" style="display:block;margin-bottom:0.8rem;">Need Help Choosing?</span>
+      <h3 class="display-sm" style="margin-bottom:0.8rem;">Let Us Find Your<br><em style="font-style:italic;color:var(--gold);">Perfect Scent</em></h3>
+      <p class="body-text" style="max-width:420px;margin:0 auto 2rem;">Not sure which fragrance is right for you? Our team is happy to guide you personally to your ideal match.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+        <a href="https://wa.me/2349031538922" target="_blank" class="btn btn-gold btn-arrow"><span>Chat on WhatsApp</span></a>
+        <a href="mailto:ekeninietuk234@gmail.com" class="btn btn-outline"><span>Send an Email</span></a>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- ============================================================
+  MOBILE FILTER DRAWER
+  ============================================================ -->
+<div class="mobile-filter-overlay" id="mobile-filter-overlay"></div>
+<div class="mobile-filter-drawer" id="mobile-filter-drawer">
+  <button class="mobile-filter-close" id="mobile-filter-close">
+    <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+
+  <div class="filter-section">
+    <div class="filter-title">By Gender</div>
+    <div class="filter-tags">
+      <button class="filter-tag active" data-cat="all" onclick="setCategory('all');closeMobileFilter()">All</button>
+      <button class="filter-tag" data-cat="For Him" onclick="setCategory('For Him');closeMobileFilter()">For Him</button>
+      <button class="filter-tag" data-cat="For Her" onclick="setCategory('For Her');closeMobileFilter()">For Her</button>
+      <button class="filter-tag" data-cat="Unisex" onclick="setCategory('Unisex');closeMobileFilter()">Unisex</button>
+    </div>
+  </div>
+
+  <div class="filter-section">
+    <div class="filter-title">Price Range</div>
+    <div class="price-range">
+      <input type="range" min="0" max="120000" value="120000" step="1000"
+        oninput="priceMax=+this.value;updatePriceLabel(+this.value);applyFilters()">
+      <div class="price-labels">
+        <span>₦0</span>
+        <span id="price-max-label-mob">₦120,000</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="filter-section">
+    <div class="filter-title">Collection</div>
+    <div class="filter-list">
+      <label class="filter-check" onclick="setCollection('all');closeMobileFilter()">All Collections</label>
+      <label class="filter-check" onclick="setCollection('signature');closeMobileFilter()">Signature</label>
+      <label class="filter-check" onclick="setCollection('new');closeMobileFilter()">New Arrivals</label>
+      <label class="filter-check" onclick="setCollection('bestsellers');closeMobileFilter()">Bestsellers</label>
+      <label class="filter-check" onclick="setCollection('limited');closeMobileFilter()">Limited Edition</label>
+    </div>
+  </div>
+
+  <button class="clear-filters" onclick="resetFilters();closeMobileFilter()">Clear All Filters</button>
+  <button class="btn btn-gold" style="width:100%;margin-top:1rem;justify-content:center;" onclick="closeMobileFilter()">
+    <span>View Results</span>
+  </button>
+</div>
+
+<!-- ============================================================
+  QUICK VIEW MODAL
+  ============================================================ -->
+<div class="quickview-overlay" id="quickview-overlay">
+  <div class="quickview-box">
+    <div class="quickview-img">
+      <img id="qv-img" src="" alt="">
+      <button class="quickview-close" id="quickview-close">
+        <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="quickview-info">
+      <div class="quickview-category" id="qv-category"></div>
+      <h2 class="quickview-name" id="qv-name"></h2>
+      <div style="font-size:0.72rem;color:var(--white-dim);" id="qv-size"></div>
+      <p class="quickview-desc" id="qv-desc"></p>
+
+      <div>
+        <div class="quickview-notes-title" style="margin-bottom:0.6rem;">Scent Notes</div>
+        <div class="quickview-notes" id="qv-notes"></div>
+      </div>
+
+      <div style="display:flex;gap:2rem;font-size:0.78rem;color:var(--white-dim);">
+        <div><strong style="color:var(--gold-dim);display:block;font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.2rem;">Longevity</strong><span id="qv-longevity"></span></div>
+        <div><strong style="color:var(--gold-dim);display:block;font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.2rem;">Sillage</strong><span id="qv-sillage"></span></div>
+      </div>
+
+      <div id="qv-rating" style="display:flex;align-items:center;gap:4px;"></div>
+
+      <div class="quickview-price-row">
+        <span class="quickview-price" id="qv-price"></span>
+        <span class="quickview-old-price" id="qv-old-price"></span>
+        <span style="font-size:0.7rem;color:#4caf50;font-weight:600;" id="qv-discount"></span>
+      </div>
+
+      <div class="quickview-actions">
+        <button id="qv-add-btn" class="btn btn-gold btn-arrow" style="width:100%;justify-content:center;"><span>Add to Cart</span></button>
+        <a href="index.html#contact" class="btn btn-ghost" style="width:100%;justify-content:center;"><span>Ask About This Fragrance</span></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+  FOOTER
+  ============================================================ -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-col">
+      <div class="nav-logo" style="margin-bottom:1rem;">
+        <div class="nav-logo-text">E<span>e</span>scents</div>
+        <div class="nav-logo-tagline">The Art of Fine Fragrance</div>
+      </div>
+      <p>We create luxury perfumes that speak before you do. Each bottle is a masterwork. Each scent is an experience you will never forget.</p>
+      <div class="footer-social" style="margin-top:1.2rem;">
+        <a href="#" class="social-icon" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:var(--white-dim);fill:none;stroke-width:1.5;"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://wa.me/2349031538922" class="social-icon" aria-label="WhatsApp" target="_blank">
+          <svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:var(--white-dim);fill:none;stroke-width:1.5;"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+        </a>
+        <a href="mailto:ekeninietuk234@gmail.com" class="social-icon" aria-label="Email">
+          <svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:var(--white-dim);fill:none;stroke-width:1.5;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <div class="footer-col-title">Collections</div>
+      <a href="#" onclick="setCollection('signature')">Signature Collection</a>
+      <a href="#" onclick="setCollection('new')">New Arrivals</a>
+      <a href="#" onclick="setCollection('bestsellers')">Bestsellers</a>
+      <a href="#" onclick="setCollection('limited')">Limited Edition</a>
+      <a href="#" onclick="setCategory('For Him')">For Him</a>
+      <a href="#" onclick="setCategory('For Her')">For Her</a>
+    </div>
+
+    <div class="footer-col">
+      <div class="footer-col-title">Navigate</div>
+      <a href="index.html">Home</a>
+      <a href="index.html#about">Our Story</a>
+      <a href="index.html#how-it-works">How It Works</a>
+      <a href="index.html#testimonials">Client Reviews</a>
+      <a href="index.html#newsletter">Newsletter</a>
+      <a href="index.html#contact">Contact Us</a>
+    </div>
+
+    <div class="footer-col">
+      <div class="footer-col-title">Customer Care</div>
+      <a href="tel:09031538922">09031538922</a>
+      <a href="mailto:ekeninietuk234@gmail.com">ekeninietuk234@gmail.com</a>
+      <a href="https://wa.me/2349031538922" target="_blank">WhatsApp Support</a>
+      <p style="margin-top:1rem;font-size:0.78rem;color:var(--gold-dim);">Orders above 50,000<br>receive FREE delivery</p>
+      <p style="margin-top:0.6rem;font-size:0.72rem;color:var(--white-dim);">Mon – Sat, 9am – 8pm</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span class="footer-logo-text">E<span>e</span>scents</span>
+    <span>© 2025 Eescents. All rights reserved. The Art of Fine Fragrance.</span>
+    <a href="index.html" class="btn btn-outline" style="padding:0.5rem 1.2rem;"><span>Back to Home</span></a>
+  </div>
+</footer>
+
+<!-- ============================================================
+  CART DRAWER
+  ============================================================ -->
+<div class="cart-overlay" id="cart-overlay"></div>
+<div class="cart-drawer" id="cart-drawer">
+  <div class="cart-header">
+    <h2 class="cart-title">Your Cart</h2>
+    <button class="cart-close" id="cart-close">
+      <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="cart-items" id="cart-items">
+    <div class="cart-empty" id="cart-empty">
+      Your cart is empty.<br>
+      <span style="color:var(--gold);font-size:0.85rem;margin-top:0.5rem;display:inline-block;">Browse the collection above</span>
+    </div>
+  </div>
+  <div class="cart-footer" id="cart-footer" style="display:none;">
+    <div class="cart-subtotal">
+      <span>Subtotal</span>
+      <span id="cart-subtotal-val">₦0</span>
+    </div>
+    <div class="cart-total">
+      <span class="cart-total-label">Total</span>
+      <span class="cart-total-val" id="cart-total-val">₦0</span>
+    </div>
+    <div class="free-delivery-note" id="free-delivery-note" style="display:none;">
+      Free delivery applied on this order
+    </div>
+    <button class="cart-checkout-btn" id="cart-checkout-btn">Proceed to Checkout</button>
+  </div>
+</div>
+
+<!-- ============================================================
+  CHECKOUT MODAL
+  ============================================================ -->
+<div class="modal-overlay" id="checkout-modal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h2 class="modal-title">Complete Your Order</h2>
+      <button class="modal-close" id="modal-close">
+        <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-section-title">Order Summary</div>
+      <div class="modal-order-list" id="modal-order-list"></div>
+
+      <div class="modal-section-title" style="margin-top:1.5rem;">Your Details</div>
+      <div class="form-group" style="margin-bottom:1rem;">
+        <label>Full Name *</label>
+        <input type="text" id="checkout-name" placeholder="Your full name">
+      </div>
+      <div class="form-group" style="margin-bottom:1rem;">
+        <label>Phone Number *</label>
+        <input type="tel" id="checkout-phone" placeholder="e.g. 08012345678">
+      </div>
+      <div class="form-group" style="margin-bottom:1rem;">
+        <label>State / Location *</label>
+        <input type="text" id="checkout-location" placeholder="e.g. Lagos, Abuja, Port Harcourt">
+      </div>
+      <div class="form-group" style="margin-bottom:1.5rem;">
+        <label>Delivery Address *</label>
+        <textarea id="checkout-address" placeholder="Your full delivery address" style="min-height:80px;"></textarea>
+      </div>
+
+      <div class="modal-section-title">Payment Information</div>
+      <div class="payment-box">
+        <div class="payment-box-title">Transfer Payment To</div>
+        <div class="payment-detail">Bank: <strong>Moniepoint</strong></div>
+        <div class="payment-detail">Account Number: <strong>9031538922</strong></div>
+        <div class="payment-detail">Account Name: <strong>David Isaac Akpan</strong></div>
+        <p class="payment-note">After completing your transfer, click the button below. We will contact you immediately to confirm payment and arrange delivery.</p>
+      </div>
+
+      <button class="whatsapp-btn" id="submit-order-btn">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        I Have Paid — Submit Order via WhatsApp
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- BACK TO TOP -->
+<button id="back-to-top" aria-label="Back to top">
+  <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<script src="shop.js"></script>
+<script>
+  // Mobile nav (shared with index)
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobile-nav');
+  const mobileOverlay = document.getElementById('mobile-overlay');
+  hamburger?.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileNav?.classList.toggle('open');
+    mobileOverlay?.classList.toggle('show');
+    document.body.style.overflow = mobileNav?.classList.contains('open') ? 'hidden' : '';
+  });
+  mobileOverlay?.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    mobileNav?.classList.remove('open');
+    mobileOverlay?.classList.remove('show');
+    document.body.style.overflow = '';
+  });
+</script>
+</body>
+</html>
