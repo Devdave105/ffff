@@ -151,16 +151,56 @@ let viewMode = 'grid';
 let priceMax = 120000;
 let wishlist = JSON.parse(localStorage.getItem('eescents_wishlist') || '[]');
 let quickViewProduct = null;
+let currentPage = 1;
+const ITEMS_PER_PAGE = 6;
 
 // ============================================================
-// RENDER PRODUCTS
+// RENDER PRODUCTS + PAGINATION
 // ============================================================
+function renderPagination() {
+  const container = document.getElementById('pagination');
+  if (!container) return;
+  const totalPages = Math.ceil(filteredProducts.length / ITEMS_PER_PAGE);
+  if (totalPages <= 1) { container.innerHTML = ''; return; }
+
+  let html = `<button class="page-btn arrow" onclick="goToPage(${currentPage - 1})" ${currentPage === 1 ? 'disabled style="opacity:0.3;pointer-events:none;"' : ''}>
+    <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+  </button>`;
+
+  for (let i = 1; i <= totalPages; i++) {
+    if (totalPages > 7 && i > 3 && i < totalPages - 1 && Math.abs(i - currentPage) > 1) {
+      if (i === 4 || i === totalPages - 2) html += `<span style="color:var(--white-dim);padding:0 0.3rem;">...</span>`;
+      continue;
+    }
+    html += `<button class="page-btn ${i === currentPage ? 'active' : ''}" onclick="goToPage(${i})">${i}</button>`;
+  }
+
+  html += `<button class="page-btn arrow" onclick="goToPage(${currentPage + 1})" ${currentPage === totalPages ? 'disabled style="opacity:0.3;pointer-events:none;"' : ''}>
+    <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+  </button>`;
+
+  container.innerHTML = html;
+}
+
+function goToPage(page) {
+  const totalPages = Math.ceil(filteredProducts.length / ITEMS_PER_PAGE);
+  if (page < 1 || page > totalPages) return;
+  currentPage = page;
+  renderProducts();
+  window.scrollTo({ top: document.getElementById('shop-grid')?.offsetTop - 120 || 0, behavior: 'smooth' });
+}
+
 function renderProducts() {
   const grid = document.getElementById('shop-grid');
   if (!grid) return;
 
+  const totalPages = Math.ceil(filteredProducts.length / ITEMS_PER_PAGE);
+  const start = (currentPage - 1) * ITEMS_PER_PAGE;
+  const end = start + ITEMS_PER_PAGE;
+  const pageProducts = filteredProducts.slice(start, end);
+
   document.getElementById('results-count').innerHTML =
-    `Showing <strong>${filteredProducts.length}</strong> of <strong>${ALL_PRODUCTS.length}</strong> fragrances`;
+    `Showing <strong>${start + 1}–${Math.min(end, filteredProducts.length)}</strong> of <strong>${filteredProducts.length}</strong> fragrances`;
 
   if (filteredProducts.length === 0) {
     grid.innerHTML = `<div class="no-results">
@@ -168,10 +208,11 @@ function renderProducts() {
       <p>Try adjusting your filters or browse all collections.</p>
       <button onclick="resetFilters()" class="btn btn-outline" style="margin-top:1.5rem;"><span>Clear All Filters</span></button>
     </div>`;
+    renderPagination();
     return;
   }
 
-  grid.innerHTML = filteredProducts.map(p => {
+  grid.innerHTML = pageProducts.map(p => {
     const discount = p.oldPrice ? Math.round((1 - p.price / p.oldPrice) * 100) : 0;
     const inWishlist = wishlist.includes(p.id);
     const stars = Array.from({length: 5}, (_, i) =>
@@ -224,12 +265,15 @@ function renderProducts() {
       </div>
     `;
   }).join('');
+
+  renderPagination();
 }
 
 // ============================================================
 // FILTER + SORT
 // ============================================================
 function applyFilters() {
+  currentPage = 1;
   filteredProducts = ALL_PRODUCTS.filter(p => {
     const catMatch = activeCategory === 'all' || p.category === activeCategory;
     const colMatch = activeCollection === 'all' || p.collection === activeCollection;
