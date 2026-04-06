@@ -224,7 +224,7 @@ let slideInterval;
 
 const slides = [
   {
-    img: 'https://images.unsplash.com/photo-1619994403073-2cec844b8e63?w=1600&q=80',
+    img: 'https://i.pinimg.com/736x/42/a3/86/42a3866062abe930ced98f4f50e0acf9.jpg',
     label: 'The Signature Collection',
     title: 'Crafted for Those<br>Who <em>Demand</em><br>Excellence',
     subtitle: 'Luxury perfumes designed to command attention and leave an unforgettable impression.',
@@ -232,7 +232,7 @@ const slides = [
     cta2: { text: 'Our Story', link: '#about' }
   },
   {
-    img: 'https://images.unsplash.com/photo-1563170351-be82bc888aa4?w=1600&q=80',
+    img: 'https://i.pinimg.com/1200x/2f/05/92/2f059204f4f2eb2022829d302729a181.jpg',
     label: 'New Arrivals 2025',
     title: 'Wear Your<br><em>Invisible</em><br>Crown',
     subtitle: 'Each bottle holds a story. Each spritz opens a world of rare, hand-selected ingredients.',
@@ -240,7 +240,7 @@ const slides = [
     cta2: { text: 'View Bestsellers', link: '#collection' }
   },
   {
-    img: 'https://images.unsplash.com/photo-1547887538-e3a2f32cb1cc?w=1600&q=80',
+    img: 'https://i.pinimg.com/736x/6e/37/e4/6e37e4d2cfb1cb6ca018cd42f5effd37.jpg',
     label: 'Gift the Extraordinary',
     title: 'The Perfect<br>Gift of <em>Scent</em><br>and Soul',
     subtitle: 'Give someone they love a fragrance that speaks before words do. Luxurious gift packaging included.',

@@ -28,6 +28,28 @@ const ALL_PRODUCTS = [
     badge: 'sale', rating: 5, reviews: 128, inStock: true,
     longevity: '10-12 hrs', sillage: 'Heavy'
   },
+
+   {
+    id: 'noir-absolu', name: 'Noir Absolu', category: 'For Him',
+    collection: 'signature',
+    size: '100ml EDP', price: 38500, oldPrice: 52000,
+    img: 'https://images.unsplash.com/photo-1608528577891-eb055944f2e7?w=600&q=80',
+    desc: 'A commanding presence of dark oud and black rose. Reserved for those who wear confidence as naturally as they breathe.',
+    notes: ['Black Pepper', 'Dark Rose', 'Oud', 'Amber'],
+    badge: 'sale', rating: 5, reviews: 128, inStock: true,
+    longevity: '10-12 hrs', sillage: 'Heavy'
+  },
+
+   {
+    id: 'noir-absolu', name: 'Noir Absolu', category: 'For Him',
+    collection: 'signature',
+    size: '100ml EDP', price: 38500, oldPrice: 52000,
+    img: 'https://images.unsplash.com/photo-1608528577891-eb055944f2e7?w=600&q=80',
+    desc: 'A commanding presence of dark oud and black rose. Reserved for those who wear confidence as naturally as they breathe.',
+    notes: ['Black Pepper', 'Dark Rose', 'Oud', 'Amber'],
+    badge: 'sale', rating: 5, reviews: 128, inStock: true,
+    longevity: '10-12 hrs', sillage: 'Heavy'
+  },
   {
     id: 'rose-imperiale', name: 'Rose Imperiale', category: 'For Her',
     collection: 'new',

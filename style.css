@@ -57,7 +57,7 @@ ul { list-style: none; }
 /* ============================================================
    CUSTOM CURSOR
    ============================================================ */
-.cursor-dot {
+/* .cursor-dot {
   width: 6px; height: 6px;
   background: var(--gold);
   border-radius: 50%;
@@ -78,7 +78,7 @@ ul { list-style: none; }
 }
 body:hover .cursor-dot { opacity: 1; }
 .cursor-expand .cursor-ring { width: 48px; height: 48px; border-color: var(--gold); }
-.cursor-expand .cursor-dot { width: 4px; height: 4px; }
+.cursor-expand .cursor-dot { width: 4px; height: 4px; } */
 
 /* ============================================================
    SCROLLBAR
